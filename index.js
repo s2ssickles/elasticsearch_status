@@ -14,7 +14,17 @@ export default function (kibana) {
         // The require reference to the JavaScript file for this app
         main: 'plugins/elasticsearch_status/app',
         // The require reference to the icon of the app
-        icon: 'plugins/elasticsearch_status/icon.svg'
+        icon: 'plugins/elasticsearch_status/icon.svg',
+
+        // Kibana v4.5.4 does not autoload the configuration values needed,  we include them here
+        injectVars: function (server, options) {
+          var config = server.config();
+          return {
+              kbnIndex: config.get('kibana.index'),
+              esShardTimeout: config.get('elasticsearch.shardTimeout'),
+              esApiVersion: config.get('elasticsearch.apiVersion')
+          };
+        }
       }
     },
 
@@ -24,6 +34,7 @@ export default function (kibana) {
       // Just call the api module that we imported above (the server/routes.js file)
       // and pass the server to it, so it can register several API interfaces at the server.
       api(server);
+
     }
 
   });

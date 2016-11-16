@@ -1,10 +1,13 @@
 import uiModules from 'ui/modules';
 import uiRoutes from 'ui/routes';
 
-import 'ui/autoload/styles';
+// Kibana version v4.5.4 does not have autoload available
+import 'ui/share/styles';
 import './less/main.less';
 import overviewTemplate from './templates/index.html';
 import detailTemplate from './templates/detail.html';
+
+import chrome from 'ui/chrome';
 
 uiRoutes.enable();
 uiRoutes
@@ -33,3 +36,14 @@ uiModules
     this.status = response.data;
   });
 });
+
+//chrome
+//.setNavBackground('#FF00FF')
+//.addTab(
+//    {
+//        id: 'netdefense',
+//        title: 'Network Defense'
+//    }
+//)
+
+console.log("Tabs: " + chrome.getTabs())

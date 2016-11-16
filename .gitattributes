@@ -1,0 +1,87 @@
+# Allow Git to make its best guess for all file types
+* text=auto
+
+# unless otherwise specified by the rules below:
+
+# These files are text and should be normalized (convert crlf => lf)
+.gitattributes text
+.gitignore text
+
+README text
+Readme text
+readme text
+
+*.awk    text
+*.as     text
+*.classpath text
+*.crt    text
+*.css    text
+*.csv    text
+*.ctl    text
+*.gsp    text
+*.gv     text
+*.htm    text
+*.html   text
+*.iml    text
+*.java   text
+*.js     text
+*.json   text
+*.jsp    text
+*.MF     text
+*.pem    text
+*.pom    text
+*.project text
+*.properties text
+*.script text
+*.spec   text
+*.sql    text
+*.SQL    text
+*.tag    text
+*.tex    text
+*.txt    text
+*.xml    text
+*.xsd    text
+*.xsl    text
+
+*.bat    text eol=crlf
+*.bash   text eof=lf
+*.csh    text eof=lf
+*.sh     text eof=lf
+*.zsh    text eof=lf
+
+*.log    text
+
+# Treat the following file types as binary
+# (binary is a macro for -text -diff)
+*.class  binary
+*.doc    binary
+*.docx   binary
+*.ear    binary
+*.exe    binary
+*.gif    binary
+*.gz     binary
+*.ico    binary
+*.jar    binary
+*.jks    binary
+*.jpg    binary
+*.m4a    binary
+*.pdf    binary
+*.PNG    binary
+*.png    binary
+*.psd    binary
+*.ppt    binary
+*.pptx   binary
+*.p12    binary
+*.rpm    binary
+*.swc    binary
+*.swf    binary
+*.tar    binary
+*.tgz    binary
+*.war    binary
+*.xls    binary
+*.xlsx   binary
+*.zip    binary
+*.Z      binary
+*.bin    binary
+*.dfc    binary
+
